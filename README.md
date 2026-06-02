@@ -2,13 +2,71 @@
 
 ## 📌 Overview
 
-PTTC Insight Lab is a product case study for an AI-assisted survey analysis and reporting workflow focused on participant-count logic, data interpretation, export clarity, and product requirements for prevention program insights.
+PTTC Insight Lab is a product case study for an AI-assisted needs assessment and reporting workflow designed to help prevention organizations move from stakeholder input to structured insights.
+
+The concept combines guided survey creation, AI-assisted analysis, and branded report generation into a single streamlined experience.
+
+This repository documents the product strategy, requirements, acceptance criteria, and key design decisions behind the MVP.
 
 This repository is a public portfolio case study and does not include private client data, credentials, production secrets, or proprietary records.
 
 ## 🧩 Problem
 
-Prevention program teams often collect survey responses in formats that are difficult to interpret consistently. Aggregate CSV exports can include response-category rows, percentages, totals, and labels that are easy to mistake for participant counts without clear validation logic.
+Prevention organizations frequently need to collect stakeholder feedback through surveys and needs assessments, then transform that information into reports that support planning, funding, and decision-making.
+
+Today, that process is often fragmented across multiple tools and manual steps:
+
+• Creating survey questions
+• Collecting responses
+• Exporting raw data
+• Analyzing results
+• Writing executive summaries
+• Creating stakeholder reports
+
+The result is a time-consuming workflow that can delay insights and create inconsistencies across programs.
+
+## 💡 Why This Matters
+
+A streamlined insight workflow allows prevention teams to spend less time formatting reports and more time understanding community needs.
+
+By combining survey generation, AI-assisted analysis, and report creation into a single experience, organizations can move from raw feedback to actionable insights more efficiently while maintaining clear reporting standards.
+
+## 🚀 Product Goals
+
+The MVP was designed to:
+
+• Generate needs-assessment surveys through a guided chat-style intake
+• Allow users to upload survey results for analysis
+• Produce executive summaries and key findings automatically
+• Generate branded stakeholder-ready reports
+• Support optional visualizations and charts
+• Minimize infrastructure and operational costs
+• Reduce the number of manual steps required to move from survey creation to reporting
+
+## 🛠️ MVP Scope
+
+The MVP focuses on two primary workflows:
+
+### Survey Mode
+
+Users complete a guided intake that generates:
+
+• Survey questions
+• Needs-assessment content
+• Structured survey outputs
+
+### Analyze Mode
+
+Users upload survey data and receive:
+
+• Executive summary
+• Key findings
+• Themes and observations
+• Optional charts
+• Branded PDF report export
+
+The MVP intentionally avoids complex databases, heavy backend infrastructure, and long-term storage requirements in order to validate the workflow quickly and cost-effectively.
+
 
 ## 💡 Why This Matters
 
