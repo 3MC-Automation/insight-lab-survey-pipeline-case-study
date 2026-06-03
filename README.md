@@ -1,14 +1,14 @@
-# 🧪 PTTC Insight Lab Case Study
+# 🧪 AI-Assisted Survey Analysis Workflow Case Study
 
 ## 📌 Overview
 
-PTTC Insight Lab is a product case study for an AI-assisted needs assessment and reporting workflow designed to help prevention organizations move from stakeholder input to structured insights.
+The AI-assisted survey analysis workflow is a product case study for an AI-assisted needs assessment and reporting workflow designed to help prevention organizations move from stakeholder input to structured insights.
 
 The concept combines guided survey creation, AI-assisted analysis, and branded report generation into a single streamlined experience.
 
 This repository documents the product strategy, requirements, acceptance criteria, and key design decisions behind the MVP.
 
-This repository is a public portfolio case study and does not include private client data, credentials, production secrets, or proprietary records.
+This repository is a public portfolio case study based on a generalized prevention technology workflow. It has been adapted to remove client-identifying details and does not include private client data, credentials, production secrets, proprietary records, or stakeholder names.
 
 ## 🧩 Problem
 

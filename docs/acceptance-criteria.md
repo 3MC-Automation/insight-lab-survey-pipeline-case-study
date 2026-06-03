@@ -1,8 +1,8 @@
-# ✅ Acceptance Criteria: PTTC Insight Lab
+# ✅ Acceptance Criteria: AI-Assisted Survey Analysis Workflow
 
 ## 🎯 Purpose
 
-These acceptance criteria define the expected behavior and documentation boundaries for the PTTC Insight Lab MVP concept. They focus on survey workflow clarity, CSV participant-count logic, AI-assisted analysis output, and report export terminology.
+These acceptance criteria define the expected behavior and documentation boundaries for the AI-assisted survey analysis workflow MVP concept. They focus on survey workflow clarity, CSV participant-count logic, AI-assisted analysis output, and report export terminology.
 
 ## 🧪 MVP Workflow
 

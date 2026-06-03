@@ -1,8 +1,8 @@
-# 📋 Requirements: PTTC Insight Lab
+# 📋 Requirements: AI-Assisted Survey Analysis Workflow
 
 ## 🎯 Purpose
 
-PTTC Insight Lab defines a product workflow for AI-assisted survey analysis and report drafting for prevention program insights. The requirements focus on guided survey creation, safe interpretation of uploaded results, participant-count validation, and clear report export expectations.
+The AI-assisted survey analysis workflow defines a product workflow for AI-assisted survey analysis and report drafting for prevention program insights. The requirements focus on guided survey creation, safe interpretation of uploaded results, participant-count validation, and clear report export expectations.
 
 ## 🧭 Product Context
 
