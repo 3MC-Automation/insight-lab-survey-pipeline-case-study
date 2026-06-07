@@ -1,88 +1,107 @@
-# 📋 Requirements: AI-Assisted Survey Analysis Workflow
+# Requirements: Insight Lab Survey Pipeline
 
-## 🎯 Purpose
+## Purpose
 
-The AI-assisted survey analysis workflow defines a product workflow for AI-assisted survey analysis and report drafting for prevention program insights. The requirements focus on guided survey creation, safe interpretation of uploaded results, participant-count validation, and clear report export expectations.
+The Insight Lab Survey Pipeline helps prevention program teams move from survey planning to a clear, reviewable stakeholder report. The workflow guides survey setup, validates uploaded results, supports accurate interpretation, and prepares findings for human review before export.
 
-## 🧭 Product Context
+## Product Context
 
-Prevention teams may need to summarize survey results for planning, evaluation, and stakeholder reporting. Survey exports can contain aggregate rows, response categories, percentages, totals, and labels that require careful interpretation before summary drafting.
+Prevention teams use surveys and needs assessments to understand stakeholder feedback and guide program planning. Moving from survey results to a useful report often requires several manual steps, and aggregate survey exports can be misread when response-category rows, totals, and participant counts are not clearly distinguished.
 
-This case study documents public-safe product requirements only. It does not include private client data, credentials, production secrets, proprietary records, application code, or runtime setup instructions.
+The Insight Lab Survey Pipeline provides a consistent workflow for defining survey context, validating CSV results, drafting insights, and preparing plain-language reports. Drafting support may help organize findings after validation, but users remain responsible for reviewing and approving the final content.
 
-## 🛠️ MVP Requirements
+This repository is a public portfolio case study and does not include raw survey data, participant-level details, private client materials, proprietary documentation, credentials, or production secrets.
 
-### Guided Survey Creation
+## MVP Requirements
 
-- Provide a structured workflow for defining survey purpose, audience, topic areas, and intended reporting use.
-- Capture question types and expected response formats before analysis assumptions are made.
-- Support clear labeling for demographic, program feedback, open-ended, and outcome-oriented questions.
-- Preserve enough survey context to guide accurate summary drafting and recommendations.
+The MVP includes guided survey setup, CSV upload and validation, participant-count handling, insight drafting, human review, and report export.
 
-### Survey Results Upload
+## 1. Guided Survey Setup
 
-- Define an upload step for survey result files, with CSV as the primary MVP format.
-- Validate that uploaded files contain recognizable survey result structures before analysis.
-- Flag ambiguous files that cannot be safely interpreted as aggregate survey exports.
-- Avoid treating unsupported or unclear files as valid inputs without validation.
+- Allow users to define the survey purpose, intended audience, topic areas, and reporting use.
+- Capture question types and expected response formats.
+- Support clear labels for demographic, program feedback, open-ended, and outcome-oriented questions.
+- Preserve survey context for use during validation, drafting, and review.
 
-### CSV Parsing
+## 2. Survey Results Upload
 
-- Parse headers, labels, response categories, percentages, totals, and available participant-base indicators.
-- Identify whether rows represent respondents, response categories, aggregate values, or summary metadata.
-- Detect files where row count reflects response-category rows rather than participant records.
-- Preserve parsed context for downstream analysis and report export language.
+- Accept CSV as the primary MVP upload format.
+- Confirm that an uploaded file can be read before validation begins.
+- Identify missing, incomplete, or unsupported file content.
+- Prevent unsupported or unclear files from proceeding to analysis as validated results.
 
-### Participant-Count Detection
+## 3. CSV Validation
 
-- Identify participant count only when supported by validated file content, metadata, totals, or recognizable survey export conventions.
-- Separate participant count from CSV row count in all analysis and export language.
+- Validate CSV structure before analysis begins.
+- Identify headers, question labels, response categories, percentages, totals, and available participant-base indicators.
+- Distinguish respondent-level records from aggregate response-category rows and summary metadata.
+- Classify the file as respondent-level data, aggregate survey results, or unsupported or ambiguous data.
+- Keep validation findings available for drafting, review, and report export.
+
+## 4. Participant-Count Handling
+
+- Determine participant count only when supported by validated file content, metadata, totals, or a recognized export structure.
+- Keep participant count separate from CSV row count.
+- Do not treat aggregate response-category rows as individual participants.
 - Use “Participants Represented” when the participant base is known.
-- Flag unknown or ambiguous participant base values rather than inferring unsupported counts.
+- Mark participant count as unknown when it cannot be validated.
+- Carry participant-count limitations into the analysis draft and exported report.
 
-### Analysis Drafting
+## 5. Insight Drafting
 
-- Generate AI-assisted summary drafts from validated survey results and provided survey context.
-- Produce themes, gaps, and recommendations in plain, stakeholder-ready language.
-- Indicate when findings are directional because the participant base or export structure is limited.
-- Avoid overstating certainty when data quality, sample size, or participant-count information is incomplete.
+- Prepare a structured draft after survey results pass validation.
+- Include findings, themes, gaps, recommendations, and methodology notes.
+- Ground drafted content in the validated survey results and preserved survey context.
+- Use drafting support to organize and summarize findings without replacing reviewer judgment.
+- Describe limited or aggregate findings carefully and avoid unsupported causal or predictive claims.
 
-### Report Export Requirements
+## 6. Human Review
 
-- Define report output requirements suitable for DOCX or report-style export.
-- Include sections for overview, participants represented, key themes, gaps, recommendations, and methodology notes.
-- Ensure exported language distinguishes participants from response categories and aggregate rows.
-- Include validation notes when participant count or CSV structure is ambiguous.
+- Allow reviewers to inspect and revise findings, themes, gaps, recommendations, and methodology notes before export.
+- Keep validation warnings and unresolved data limitations visible during review.
+- Allow reviewers to confirm or revise participant-count language.
+- Require human review before a report is treated as final.
 
-## ⚙️ Non-Functional Requirements
+## 7. Report Export
 
-- Documentation must remain public-safe and portfolio-facing.
-- Requirements must avoid references to private client data, credentials, production secrets, or proprietary records.
-- Product language must be concise, professional, and understandable to non-technical stakeholders.
-- Any future workflow should prioritize interpretability, auditability, and clear terminology over unsupported automation claims.
-- This repository must remain documentation-only and must not include application code or runtime configuration files.
+- Produce a stakeholder-ready report in plain language.
+- Include a survey overview, participants represented when known, findings, themes, gaps, recommendations, and methodology notes.
+- Distinguish participants from response categories, response totals, and aggregate rows.
+- Include clear limitation notes when participant count or CSV structure is unknown or ambiguous.
+- Preserve reviewer-approved language in the exported report.
 
-## 👤 User Stories
+## Non-Functional Requirements
 
-- As prevention program staff, I want guided survey setup so that analysis reflects the purpose and audience of the survey.
-- As an evaluator, I want CSV parsing rules so that aggregate exports are interpreted consistently.
-- As a reporting lead, I want participant-count validation so that reports do not confuse response-category rows with participants.
-- As a program leader, I want themes, gaps, and recommendations so that survey findings can inform planning decisions.
-- As a stakeholder reviewer, I want clear export language so that report outputs are understandable and defensible.
+- Use terminology that is clear to non-technical users.
+- Make validation results and data limitations visible and reviewable.
+- Keep drafted findings traceable to validated survey inputs.
+- Avoid unsupported claims about data quality, participant counts, or findings.
+- Support a consistent workflow from survey setup through report export.
 
-## 🚧 Product Constraints
+## User Stories
 
+- As prevention program staff, I want to define survey purpose and reporting goals so that the workflow preserves the context needed for analysis.
+- As an evaluator, I want uploaded CSV files validated so that aggregate results and respondent-level records are interpreted correctly.
+- As a reporting lead, I want participant counts separated from CSV row counts so that reports do not overstate participation.
+- As a program leader, I want clear findings, themes, gaps, and recommendations so that survey results can support planning.
+- As a reviewer, I want to revise draft language and confirm limitations before a report is exported.
+
+## Product Constraints
+
+- CSV is the only required upload format for the MVP.
 - CSV row count must not be used as participant count unless the file is validated as respondent-level data.
-- Aggregate survey exports must be validated before analysis language treats them as reliable.
-- Ambiguous participant counts must be labeled as unknown or not available.
-- AI-assisted summaries must be grounded in validated survey context and parsed results.
-- Public documentation must not expose private client data, credentials, production secrets, proprietary records, or implementation-specific runtime setup.
+- Unknown or ambiguous participant counts must remain unknown.
+- Unsupported or ambiguous files must not proceed as validated results.
+- Analysis must remain descriptive and must not claim causal or predictive conclusions.
+- Final reports require human review before export.
 
-## ✅ Success Criteria
+## Success Criteria
 
-- The MVP workflow clearly documents guided survey creation, results upload, CSV parsing, analysis drafting, and report export expectations.
-- Participant count is separated from response-category row count throughout the requirements.
-- “Participants Represented” is used when the participant base is known.
-- Ambiguous CSV exports are flagged instead of being treated as valid aggregate results.
-- Report requirements support clear themes, gaps, recommendations, and methodology notes.
-- The repository remains a documentation-only public portfolio case study.
+- Users can define survey context and reporting goals through a guided setup.
+- The workflow validates CSV structure before analysis begins.
+- Respondent-level records are distinguished from aggregate survey rows.
+- Participant counts are reported only when supported by validated data.
+- Unknown or ambiguous values are clearly labeled.
+- Drafts include findings, themes, gaps, recommendations, and methodology notes.
+- Reviewers can revise draft content and confirm limitations before export.
+- Exported reports communicate findings and limitations in plain language.
