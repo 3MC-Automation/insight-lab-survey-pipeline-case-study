@@ -1,127 +1,72 @@
-# 🧪 AI-Assisted Survey Analysis Workflow Case Study
+# Insight Lab Survey Pipeline Case Study
 
-## 📌 Overview
+## Overview
 
-The AI-assisted survey analysis workflow is a product case study for an AI-assisted needs assessment and reporting workflow designed to help prevention organizations move from stakeholder input to structured insights.
+The Insight Lab Survey Pipeline is a product case study for a survey planning, CSV validation, insight drafting, human review, and report export workflow. It helps teams turn survey feedback into clearer insights and stakeholder-ready reporting through a consistent, reviewable process.
 
-The concept combines guided survey creation, AI-assisted analysis, and branded report generation into a single streamlined experience.
+## Portfolio Note
 
-This repository documents the product strategy, requirements, acceptance criteria, and key design decisions behind the MVP.
+This repository is a public portfolio case study and does not include raw survey data, participant-level details, private client materials, proprietary documentation, credentials, or production secrets.
 
-This repository is a public portfolio case study based on a generalized prevention technology workflow. It has been adapted to remove client-identifying details and does not include private client data, credentials, production secrets, proprietary records, or stakeholder names.
+## Problem
 
-## 🧩 Problem
+Survey reporting often happens across disconnected tools and manual steps. Teams may need to define survey goals, organize questions, interpret exported results, identify useful findings, and prepare reports without one consistent workflow.
 
-Prevention organizations frequently need to collect stakeholder feedback through surveys and needs assessments, then transform that information into reports that support planning, funding, and decision-making.
+This makes it easier to misread survey exports, confuse participant counts with response-category rows, or struggle to turn feedback into clear findings and recommendations.
 
-Today, that process is often fragmented across multiple tools and manual steps:
+## Product Goal
 
-• Creating survey questions
-• Collecting responses
-• Exporting raw data
-• Analyzing results
-• Writing executive summaries
-• Creating stakeholder reports
+The product goal is to provide a repeatable workflow for survey setup, CSV validation, participant-count safeguards, insight drafting, human review, and report export.
 
-The result is a time-consuming workflow that can delay insights and create inconsistencies across programs.
+## Users
 
-## 💡 Why This Matters
+- Program teams
+- Evaluation and reporting staff
+- Prevention and public health professionals
+- Internal teams responsible for survey synthesis and recommendations
+- Stakeholders reviewing survey findings
 
-A streamlined insight workflow allows prevention teams to spend less time formatting reports and more time understanding community needs.
+## My Role
 
-By combining survey generation, AI-assisted analysis, and report creation into a single experience, organizations can move from raw feedback to actionable insights more efficiently while maintaining clear reporting standards.
+- Product operations
+- Workflow design
+- Requirements definition
+- Survey process mapping
+- Data interpretation safeguards
+- Documentation and implementation planning
 
-## 🚀 Product Goals
+## MVP Scope
 
-The MVP was designed to:
+- Guided survey setup
+- CSV survey-result upload
+- CSV structure validation
+- Participant-count detection and labeling
+- Insight drafting
+- Human review
+- Stakeholder-ready report export
 
-• Generate needs-assessment surveys through a guided chat-style intake
-• Allow users to upload survey results for analysis
-• Produce executive summaries and key findings automatically
-• Generate branded stakeholder-ready reports
-• Support optional visualizations and charts
-• Minimize infrastructure and operational costs
-• Reduce the number of manual steps required to move from survey creation to reporting
+## Product Logic
 
-## 🛠️ MVP Scope
+Survey context is captured first, including the survey purpose, audience, topic areas, and reporting goals. CSV results are then uploaded and validated before analysis begins.
 
-The MVP focuses on two primary workflows:
+The workflow distinguishes respondent-level records from aggregate response-category rows, separates participant count from CSV row count, and uses “Participants Represented” when the participant base is supported by validated data. It then prepares findings, themes, gaps, recommendations, and methodology notes for human review before export.
 
-### Survey Mode
+## Human-Guided Analysis Process
 
-Users complete a guided intake that generates:
+Automation or AI may support grouping, summarization, drafting, and recommendation development after survey results pass validation. Human review remains central to confirming participant-count language, interpreting findings, revising recommendations, and approving report content.
 
-• Survey questions
-• Needs-assessment content
-• Structured survey outputs
+The workflow does not claim causal, predictive, or fully automated decision-making.
 
-### Analyze Mode
+## Key Product Decisions
 
-Users upload survey data and receive:
+- Lead with workflow clarity before AI support
+- Validate survey exports before drafting analysis
+- Separate participant counts from CSV row counts
+- Keep findings reviewable and traceable
+- Require human review before report export
+- Keep public documentation limited to product design and workflow logic
 
-• Executive summary
-• Key findings
-• Themes and observations
-• Optional charts
-• Branded PDF report export
-
-The MVP intentionally avoids complex databases, heavy backend infrastructure, and long-term storage requirements in order to validate the workflow quickly and cost-effectively.
-
-
-## 💡 Why This Matters
-
-Accurate survey interpretation supports stronger program planning, clearer reporting, and better stakeholder communication. A workflow that separates participant counts from response-category row counts helps prevent misleading summaries and improves confidence in exported reports.
-
-## 👥 Users
-
-- Prevention program staff preparing survey summaries
-- Evaluation and reporting teams reviewing participant feedback
-- Program leaders using insights to guide planning decisions
-- Stakeholders who need clear, defensible report outputs
-
-## 🎯 My Role
-
-I defined the product structure, MVP workflow, documentation scope, participant-count logic requirements, report export expectations, and public-safe case study boundaries.
-
-## 🚀 Product Goals
-
-- Guide users through survey setup and results interpretation
-- Validate aggregate CSV exports before analysis
-- Distinguish participants represented from response-category rows
-- Support AI-assisted drafting of themes, gaps, and recommendations
-- Produce clear report-ready outputs for prevention program insights
-
-## 🛠️ MVP Scope
-
-- Guided survey creation flow
-- Survey results upload and CSV parsing requirements
-- Participant-count detection and validation rules
-- AI-assisted analysis summary requirements
-- Themes, gaps, and recommendation outputs
-- DOCX/report export requirements
-- Public-safe documentation boundaries
-
-## 📊 Product Logic Diagrams
-
-Diagram assets to be added.
-
-## 🔮 Future Scope
-
-- Expanded export format support
-- Additional validation patterns for varied survey tools
-- Reviewer notes and approval workflow concepts
-- More detailed reporting templates by program type
-- Accessibility and plain-language review guidance
-
-## 🧠 Key Product Decisions
-
-- Treat participant count as a validated metric, not a raw CSV row count.
-- Use “Participants Represented” when the participant base is known.
-- Require ambiguity handling before aggregate exports are considered valid.
-- Keep this repository documentation-only for public portfolio review.
-- Exclude client data, credentials, production secrets, proprietary records, and runtime setup instructions.
-
-## 📁 Repository Contents
+## Repository Contents
 
 ```text
 README.md
@@ -130,21 +75,29 @@ docs/
   acceptance-criteria.md
 ```
 
-> Planned diagram assets: `workflow-diagram.png` and `architecture-diagram.png`. Diagram PNGs are not included until finalized.
+- [`docs/requirements.md`](docs/requirements.md) documents the MVP workflow, product requirements, constraints, and success criteria.
+- [`docs/acceptance-criteria.md`](docs/acceptance-criteria.md) defines expected behavior for survey setup, CSV validation, participant-count handling, insight drafting, review, and report export.
 
-## ✅ Outcome
+## Outcome
 
-This case study documents a focused product concept for improving survey analysis quality, reducing participant-count confusion, and clarifying report export expectations for prevention program teams.
+This case study demonstrates how product operations and workflow design can create a more consistent path from survey feedback to reviewable insights, reporting outputs, and decision support.
 
-## 🔁 Future Iterations
+## Future Iterations
 
-Future iterations may expand the requirements, add finalized diagram assets, document additional CSV validation scenarios, and refine report language patterns for different prevention program audiences.
+- Add visual workflow diagrams
+- Add sanitized example output formats
+- Expand reusable reporting templates
+- Create implementation checklists
+- Develop reusable prompt or review guides for structured synthesis
 
-## 🧰 Skills Demonstrated
+## Skills Demonstrated
 
-- Product requirements documentation
-- MVP scoping and workflow definition
-- Data interpretation safeguards
-- Acceptance criteria writing
-- AI-assisted reporting product strategy
-- Public-safe case study documentation
+- Product Operations
+- Workflow Design
+- Requirements Definition
+- Survey Operations
+- Data Interpretation Safeguards
+- Reporting Systems
+- AI-Assisted Workflow Design
+- Documentation
+- Stakeholder-Centered Process Design
